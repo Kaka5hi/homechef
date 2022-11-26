@@ -1,0 +1,175 @@
+.hero-section {
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.hero-section > .hero-left {
+  flex: 2;
+  border: var(--main-border);
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-section > .hero-left img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: flex;
+}
+
+.hero-section > .hero-left > .hero-details {
+  position: absolute;
+  color: var(--primary-color);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 5));
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 4px 5px 5px rgba(0, 0, 0, 0.56);
+  transition: all 500ms ease-in-out;
+  animation: fade 1200ms ease-in-out 1;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-section > .hero-left > .hero-details > span {
+  font-family: "Great Vibes", cursive;
+  font-size: 5rem;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.hero-section > .hero-left > .hero-details > p {
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 400;
+}
+
+.hero-section > .hero-left > .hero-details > a {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1rem;
+  text-shadow: 4px 5px 5px rgba(0, 0, 0, 0.56);
+  position: relative;
+  padding: 10px;
+}
+
+.hero-section > .hero-left > .hero-details > a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+  left: 0;
+  bottom: 0;
+  transform: scale(0);
+  transform-origin: center;
+  transition: 500ms ease-in-out;
+}
+
+.hero-section > .hero-left > .hero-details > a:hover::after {
+  transform: scale(0.8);
+  transform-origin: center;
+  transition: 500ms ease-in-out;
+}
+
+.hero-section > .hero-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero-section > .hero-right > article {
+  position: relative;
+  border: var(--main-border);
+  box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 1);
+  animation: slideIn 1200ms ease-in-out 1;
+}
+
+.hero-section > .hero-right > article:nth-child(1) {
+  animation-delay: 100ms;
+}
+
+.hero-section > .hero-right > article:nth-child(2) {
+  animation-delay: 200ms;
+}
+
+.hero-section > .hero-right > article:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 0.8;
+    transform: translateX(0);
+  }
+}
+
+.hero-section > .hero-right > article img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: flex;
+}
+
+.hero-section > .hero-right > article span {
+  position: absolute;
+  color: var(--primary-color);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 5));
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 4px 5px 5px rgba(0, 0, 0, 0.56);
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+  text-align: center;
+}
+
+.hero-section > .hero-right > article span:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 425px) {
+  .hero-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-section > .hero-left {
+    box-shadow: 4px 4px 0 0 rgb(0 0 0);
+    order: 2;
+  }
+}

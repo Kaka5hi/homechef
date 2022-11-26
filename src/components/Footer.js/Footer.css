@@ -1,0 +1,33 @@
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 40px;
+  height: 60px;
+}
+
+.social-links > .link {
+  position: relative;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 500ms ease-in-out;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.social-links > .link > svg {
+  font-size: 2rem;
+}
+
+.social-links > .link:hover {
+  transition: 500ms ease-in-out;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
